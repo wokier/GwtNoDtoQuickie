@@ -1,0 +1,43 @@
+body {
+	color: #999999;
+}
+
+header,footer {
+	text-align: center;
+	border-top: 2px solid #777777;
+	border-bottom: 2px solid #777777;
+}
+
+h1,h2 {
+	color: #777777;
+}
+
+content{
+	display: block;
+	min-width: 50%;
+	max-width: 60%;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	clear: both;
+}
+
+#notification {
+	height: 1em;
+}
+
+.right {
+	float: right;
+	text-align: right;
+	clear: both;
+}
+.fadeReady{
+	opacity:0;
+	 -webkit-transition: opacity 2s;
+    -moz-transition: opacity 2s;
+    -o-transition: opacity 2s;
+	transition: opacity 2s;
+}
+.fade {
+	opacity:1;
+}

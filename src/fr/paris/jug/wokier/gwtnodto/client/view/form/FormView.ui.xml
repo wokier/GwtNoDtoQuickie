@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.google.gwt.user.cellview.client" xmlns:d="urn:import:com.google.gwt.user.datepicker.client">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<form>
+			<fieldset>
+				<legend>Jugger</legend>
+			<g:Label text="Full Name" />
+			<g:TextBox ui:field="fullNameTextBox" />
+			<g:Label text="Email" />
+			<g:TextBox ui:field="emailTextBox" />
+			<g:Label text="Birthday" />
+			<d:DateBox ui:field="birthdayDateBox" />
+			<g:Label text="Twitter @" />
+			<g:TextBox ui:field="twitterTextBox" />
+			</fieldset>
+			<div class="right">
+				<g:Button ui:field="validateButton" text="Validate"/>
+				<g:Button ui:field="cancelButton" text="Cancel"/>
+			</div>
+
+		</form>
+
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

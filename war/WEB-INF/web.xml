@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <!-- Servlets -->
+	<servlet>
+		<servlet-name>juggerServlet</servlet-name>
+		<servlet-class>fr.paris.jug.wokier.gwtnodto.server.rpc.JuggerServiceRPCImpl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GWTEHInitServlet</servlet-name>
+		<servlet-class>teh.gwt.server.GWTEHInitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>remoteLogging</servlet-name>
+                <!-- Default Remote logging Servlet using java.util.logging -->
+<!--            <servlet-class>com.google.gwt.logging.server.RemoteLoggingServiceImpl</servlet-class> -->
+                <!-- Custom Remote logging Servlet using slf4j -->
+		<servlet-class>usefulllogging.server.UsefullRemoteLoggingServiceImpl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remoteLogging</servlet-name>
+		<url-pattern>/gwtnodtoquickie/remote_logging</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>juggerServlet</servlet-name>
+		<url-pattern>/gwtnodtoquickie/jugger</url-pattern>
+	</servlet-mapping>
+  
+  <!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+
+<!--   <servlet> -->
+<!--     <servlet-name>SystemServiceServlet</servlet-name> -->
+<!--     <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class> -->
+<!--     <init-param> -->
+<!--       <param-name>services</param-name> -->
+<!--       <param-value/> -->
+<!--     </init-param> -->
+<!--   </servlet> -->
+
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>SystemServiceServlet</servlet-name> -->
+<!--     <url-pattern>/_ah/spi/*</url-pattern> -->
+<!--   </servlet-mapping> -->
+
+</web-app>

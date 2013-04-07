@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN"
+  "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='gwtnodtoquickie'>
+	<inherits name='com.google.gwt.user.User' />
+
+	<inherits name='com.google.gwt.user.theme.clean.Clean' />
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+	<inherits name='com.google.common.base.Base' />
+
+	<inherits name="com.google.gwt.logging.Logging" />
+	<inherits name='usefulllogging.UsefullLogging' />
+
+	<set-property name="gwt.logging.logLevel" value="FINE" />
+	<set-property name="gwt.logging.enabled" value="TRUE" />
+	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+	<set-property name="gwt.logging.consoleHandler" value="ENABLED" />
+	<set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+	<set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" />
+
+	<inherits name="com.googlecode.objectify.Objectify" />
+
+	<inherits name='teh.TEH' />
+
+	<entry-point class='fr.paris.jug.wokier.gwtnodto.client.EntryPoint' />
+
+	<source path='client' />
+	<source path='shared' />
+
+</module>
