@@ -7,14 +7,18 @@
 		<form>
 			<fieldset>
 				<legend>Jugger</legend>
-			<g:Label text="Full Name" />
-			<g:TextBox ui:field="fullNameTextBox" />
-			<g:Label text="Email" />
-			<g:TextBox ui:field="emailTextBox" />
-			<g:Label text="Birthday" />
-			<d:DateBox ui:field="birthdayDateBox" />
-			<g:Label text="Twitter @" />
-			<g:TextBox ui:field="twitterTextBox" />
+				<g:Label text="Full Name *" />
+				<g:TextBox ui:field="fullNameTextBox" />
+				<g:Label ui:field="fullNameErrorLabel" styleName="error"/>
+				<g:Label text="Email *" />
+				<g:TextBox ui:field="emailTextBox" />
+				<g:Label ui:field="emailErrorLabel" styleName="error"/>
+				<g:Label text="Birthday" />
+				<d:DateBox ui:field="birthdayDateBox" />
+				<g:Label ui:field="birthdayErrorLabel" styleName="error"/>
+				<g:Label text="Twitter @" />
+				<g:TextBox ui:field="twitterTextBox" />
+				<g:Label text="* Required" />
 			</fieldset>
 			<div class="right">
 				<g:Button ui:field="validateButton" text="Validate"/>
@@ -22,7 +26,6 @@
 			</div>
 
 		</form>
-
 
 	</g:HTMLPanel>
 </ui:UiBinder> 

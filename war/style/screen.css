@@ -8,6 +8,11 @@ header,footer {
 	border-bottom: 2px solid #777777;
 }
 
+header *{
+	display: inline-block;
+	vertical-align: middle;
+}
+
 h1,h2 {
 	color: #777777;
 }
@@ -40,4 +45,8 @@ content{
 }
 .fade {
 	opacity:1;
+}
+.error {
+	color: red;
+	height: 1em;
 }

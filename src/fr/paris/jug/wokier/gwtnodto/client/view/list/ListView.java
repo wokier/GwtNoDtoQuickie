@@ -3,6 +3,7 @@ package fr.paris.jug.wokier.gwtnodto.client.view.list;
 import java.util.List;
 
 import com.google.common.base.Strings;
+import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.i18n.shared.DateTimeFormat;
@@ -11,6 +12,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.cellview.client.CellTable;
+import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
@@ -32,7 +34,7 @@ public class ListView extends Composite {
 
     private final Presenter presenter;
 
-    public ListView(Presenter presenter) {
+    public ListView(final Presenter presenter) {
 	this.presenter = presenter;
 	initWidget(uiBinder.createAndBindUi(this));
 	cellTable.addColumn(new TextColumn<Jugger>() {
@@ -61,6 +63,17 @@ public class ListView extends Composite {
 		return "";
 	    };
 	}, "Twitter");
+	cellTable.addColumn(new Column<Jugger, Jugger>(new ActionCell<Jugger>("✘ Delete", new ActionCell.Delegate<Jugger>() {
+	    @Override
+	    public void execute(Jugger jugger) {
+		presenter.doDeleteJugger(jugger);
+	    }
+	})) {
+	    @Override
+	    public Jugger getValue(Jugger jugger) {
+		return jugger;
+	    }
+	}, "Delete");
 	dataProvider.addDataDisplay(cellTable);
     }
 
@@ -74,7 +87,11 @@ public class ListView extends Composite {
 	presenter.startAdd();
     }
 
-    public void addJugger(Jugger result) {
-	dataProvider.getList().add(result);
+    public void addJugger(Jugger jugger) {
+	dataProvider.getList().add(jugger);
+    }
+
+    public void removeJugger(Jugger jugger) {
+	dataProvider.getList().remove(jugger);
     }
 }

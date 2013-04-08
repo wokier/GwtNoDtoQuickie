@@ -3,6 +3,10 @@ package fr.paris.jug.wokier.gwtnodto.shared.model;
 import java.util.Date;
 
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import teh.annotations.ToString;
 import teh.annotations.ToStringEquals;
@@ -20,9 +24,14 @@ public class Jugger extends GWTEHObject {
     @ToStringEqualsHashCode
     public Long id;
     @ToStringEquals
+    @NotNull
+    @NotEmpty
     public String fullName;
     @ToString
+    @NotNull
+    @NotEmpty
     public String email;
+    @Past
     public Date birthday;
     public String twitter;
 

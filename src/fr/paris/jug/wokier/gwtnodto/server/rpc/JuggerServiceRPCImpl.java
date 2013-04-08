@@ -1,9 +1,13 @@
 package fr.paris.jug.wokier.gwtnodto.server.rpc;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -29,7 +33,13 @@ public class JuggerServiceRPCImpl extends RemoteServiceServlet implements Jugger
 
     @Override
     public Jugger add(Jugger jugger) {
-	return juggerDao.add(jugger);
+	Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+	Set<ConstraintViolation<Jugger>> violations = validator.validate(jugger);
+	if (violations.isEmpty()) {
+	    return juggerDao.add(jugger);
+	} else {
+	    throw new IllegalArgumentException("Invalid values in " + jugger + ":" + violations);
+	}
     }
 
     @Override
@@ -42,6 +52,12 @@ public class JuggerServiceRPCImpl extends RemoteServiceServlet implements Jugger
     }
 
     public void update(Jugger jugger) {
-	juggerDao.update(jugger);
+	Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+	Set<ConstraintViolation<Jugger>> violations = validator.validate(jugger);
+	if (violations.isEmpty()) {
+	    juggerDao.update(jugger);
+	} else {
+	    throw new IllegalArgumentException("Invalid values in " + jugger + ":" + violations);
+	}
     }
 }
