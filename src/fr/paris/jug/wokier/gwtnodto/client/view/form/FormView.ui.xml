@@ -20,8 +20,8 @@
 				<g:TextBox ui:field="twitterTextBox" />
 				<g:Label text="* Required" />
 			</fieldset>
-			<div class="right">
-				<g:Button ui:field="validateButton" text="Validate"/>
+			<div class="right margin2">
+				<g:Button ui:field="validateButton" text="✓ Validate"/>
 				<g:Button ui:field="cancelButton" text="Cancel"/>
 			</div>
 

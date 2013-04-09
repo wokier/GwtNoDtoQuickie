@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.googlecode.gwtspeedup</groupId>
 	<artifactId>gwt-nodto-quickie</artifactId>
-	<version>3</version>
+	<version>4</version>
 	<packaging>war</packaging>
 
 	<repositories>
@@ -220,6 +220,10 @@
 			<scope>test</scope>
 		</dependency>
 
-
+		<dependency>
+			<groupId>com.github.wokier</groupId>
+			<artifactId>gwt-gravatar</artifactId>
+			<version>0.2</version>
+		</dependency>
 	</dependencies>
 </project>

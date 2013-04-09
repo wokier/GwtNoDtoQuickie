@@ -2,6 +2,7 @@ package fr.paris.jug.wokier.gwtnodto.client.view.list;
 
 import java.util.List;
 
+import com.github.wokier.gwt.client.GravatarColumn;
 import com.google.common.base.Strings;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.core.client.GWT;
@@ -37,6 +38,12 @@ public class ListView extends Composite {
     public ListView(final Presenter presenter) {
 	this.presenter = presenter;
 	initWidget(uiBinder.createAndBindUi(this));
+	cellTable.addColumn(new GravatarColumn<Jugger>() {
+	    @Override
+	    protected String getEmail(Jugger jugger) {
+		return jugger.email;
+	    }
+	}, "Avatar");
 	cellTable.addColumn(new TextColumn<Jugger>() {
 	    public String getValue(Jugger jugger) {
 		return jugger.fullName;

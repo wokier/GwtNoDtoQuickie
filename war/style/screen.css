@@ -1,5 +1,6 @@
-body {
-	color: #999999;
+body *{
+	color: #888888;
+	font-family: 'Permanent Marker', cursive;
 }
 
 header,footer {
@@ -27,6 +28,14 @@ content{
 	clear: both;
 }
 
+fieldset {
+	border-radius: 4px;	
+}
+
+button{
+	color: #4B4A4A;
+}
+
 #notification {
 	height: 1em;
 }
@@ -49,4 +58,11 @@ content{
 .error {
 	color: red;
 	height: 1em;
+	text-align: right;
+}
+.margin2 {
+	margin: 2px;
+}
+.list td {
+	padding: 2px 10px;
 }

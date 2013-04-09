@@ -31,6 +31,9 @@
 		<when-type-is class="javax.validation.ValidatorFactory" />
 	</replace-with>
 
+	<inherits name='com.github.wokier.gwt.Gravatar' />
+
+
 	<entry-point class='fr.paris.jug.wokier.gwtnodto.client.EntryPoint' />
 
 	<source path='client' />
